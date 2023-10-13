@@ -1,5 +1,5 @@
-FROM node:14.8.0-alpine
-RUN npm install -g npm@6.14.7
+FROM node:18.17.0-alpine
+RUN npm install -g npm@10.2.0
 RUN mkdir -p /var/www/token
 WORKDIR /var/www/token
 ADD . /var/www/token
