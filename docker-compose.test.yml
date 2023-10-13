@@ -58,7 +58,7 @@ services:
     ports:
       - ${USER_SERVICE_PORT}:${USER_SERVICE_PORT}
   db:
-    image: 'mongo:3.7'
+    image: 'mongo:7.0'
     restart: always
     hostname: db
     environment:
