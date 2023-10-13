@@ -19,17 +19,17 @@ export class TaskService {
   }
 
   public async findTaskById(id: string) {
-    return await this.taskModel.findById(id);
+    return this.taskModel.findById(id);
   }
 
   public async removeTaskById(id: string) {
-    return await this.taskModel.findOneAndDelete({ _id: id });
+    return this.taskModel.findOneAndDelete({_id: id});
   }
 
   public async updateTaskById(
     id: string,
     params: ITaskUpdateParams,
   ): Promise<ITask> {
-    return await this.taskModel.updateOne({ _id: id }, params);
+    return this.taskModel.findByIdAndUpdate({_id: id}, params);
   }
 }

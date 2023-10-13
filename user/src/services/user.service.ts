@@ -26,7 +26,7 @@ export class UserService {
     id: string,
     userParams: { is_confirmed: boolean },
   ): Promise<IUser> {
-    return this.userModel.updateOne({ _id: id }, userParams).exec();
+    return this.userModel.findByIdAndUpdate({ _id: id }, userParams).exec();
   }
 
   public async createUser(user: IUser): Promise<IUser> {
@@ -49,7 +49,7 @@ export class UserService {
     id: string,
     linkParams: { is_used: boolean },
   ): Promise<IUserLink> {
-    return this.userLinkModel.updateOne({ _id: id }, linkParams);
+    return this.userLinkModel.findByIdAndUpdate({ _id: id }, linkParams);
   }
 
   public getConfirmationLink(link: string): string {
