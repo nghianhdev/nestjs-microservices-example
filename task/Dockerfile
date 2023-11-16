@@ -1,4 +1,4 @@
-FROM node:18.18.1-alpine
+FROM node:21.2.0-alpine
 RUN npm install -g npm@10.2.0
 RUN mkdir -p /var/www/task
 WORKDIR /var/www/task
